@@ -100,9 +100,98 @@
             <h1 class="textoFranquia"><span class="TextFranquiaspan">Franquias por todo o País para a sua comodidade</span></h1>
         </div>
     </section>
+
     <div class="separador-2"></div>
-    <h1>um texto qualquer </h1>
+    <section class="container-meio">
+    <p class="p11">entregamos</p> 
+    <h1><strong>Resultados para todos nossos clientes</strong></h1> 
+    </section>
+
+    <section class="Contadores">
+    <div class="contador">
+        <span class="numero" data-target="7">0</span>
+        <p><span class="destaque">países</span> de atuação</p>
+    </div>
+    <div class="contador">
+        <span class="numero" data-target="100000">0</span>
+        <p><span class="destaque">mil</span> clientes beneficiados</p>
+    </div>
+    <div class="contador">
+        <span class="numero" data-target="20">0</span>
+        <p><span class="destaque">equipamentos</span> homologados</p>
+    </div>
+</section>
+   <section class="FeitoParaVoce">
+    <div class="containerParaVoce">
+        <p class="p11">Soluções ideais para você e seu negócio</p>
+        <h1>Feito para você!</h1>
+    </div>
+   </section>
+   <section class="features">
+  <div class="container">
+    <div class="feature-item">
+      <img src="img/imgRastreamento.jpg" alt="Ícone de Rastreamento e Monitoramento" class="icon">
+      <h3>Rastreamento e Monitoramento</h3>
+      <p>Monitore e rastreie seu veículo 24 horas por dia através da plataforma web ou aplicativos Android e iOS.</p>
+    </div>
+    <div class="feature-item">
+      <img src="img/imgSegurança.png" alt="Ícone de Segurança Eletrônica" class="icon">
+      <h3>Segurança Eletrônica 24 horas</h3>
+      <p>Monitore seu imóvel 24 horas através de nossos aplicativos para Android e iOS.</p>
+    </div>
+    <div class="feature-item">
+      <img src="img/imgTelemetria.jpg" alt="Ícone de Telemetria Veicular" class="icon">
+      <h3>Telemetria Veicular</h3>
+      <p>Controle e gerencie o seu veículo com KMs percorridos, horímetro, despesas e manutenções do veículo.</p>
+    </div>
+    <div class="feature-item">
+      <img src="img/imgTempo.jpg" alt="Ícone de Informações em Tempo Real" class="icon">
+      <h3>Informações em Tempo Real</h3>
+      <p>Veja as informações do seu veículo em tempo real como velocidade, ignição e muito mais.</p>
+    </div>
+    <div class="feature-item">
+      <img src="img/imgService.jpg" alt="Ícone de Rastreamento Agrícola" class="icon">
+      <h3>Rastreamento Agrícola</h3>
+      <p>Importe e exporte talhões em KML/KMZ e tenha a gestão das suas máquinas em nossa plataforma.</p>
+    </div>
+    <div class="feature-item">
+      <img src="img/imgMundo.jpg" alt="Ícone de Nuvem" class="icon">
+      <h3>De qualquer lugar do mundo</h3>
+      <p>Nossos serviços são disponibilizados 100% em nuvem e podem ser acessados de qualquer lugar.</p>
+    </div>
+  </div>
+</section>
+
+   
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Função para animar os contadores
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.numero');
+
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target'); // Valor final
+                const speed = target / 200; // Velocidade da contagem
+
+                const updateCount = () => {
+                    const current = +counter.innerText; // Valor atual
+                    const increment = Math.ceil(speed); // Incremento
+
+                    if (current < target) {
+                        counter.innerText = current + increment; // Atualiza o valor
+                        setTimeout(updateCount, 30); // Rechama a função
+                    } else {
+                        counter.innerText = target; // Garante o valor final exato
+                    }
+                };
+
+                updateCount();
+            });
+        };
+
+        // Executa a animação quando a página carregar
+        document.addEventListener('DOMContentLoaded', animateCounters);
+    </script>
 </body>
 
 </html>
